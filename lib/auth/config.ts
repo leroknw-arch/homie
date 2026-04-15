@@ -11,8 +11,20 @@ const credentialsSchema = z.object({
 });
 
 const demoPassword = process.env.DEMO_PASSWORD ?? "demo1234";
+const authSecret = process.env.AUTH_SECRET ?? process.env.NEXTAUTH_SECRET;
+
+function parseBoolean(value: string | undefined) {
+  if (value === "true") return true;
+  if (value === "false") return false;
+
+  return undefined;
+}
+
+const trustHost = parseBoolean(process.env.AUTH_TRUST_HOST) ?? Boolean(process.env.VERCEL_URL);
 
 export const authConfig: NextAuthConfig = {
+  secret: authSecret,
+  trustHost,
   pages: {
     signIn: "/login"
   },
