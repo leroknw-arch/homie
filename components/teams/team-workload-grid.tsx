@@ -31,7 +31,7 @@ export function TeamWorkloadGrid({
   return (
     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       {teams.map((team) => (
-        <Card key={team.id}>
+        <Card key={team.id} className="glass-panel">
           <CardHeader>
             <CardTitle>{team.name}</CardTitle>
             <CardDescription>{team.members} members active</CardDescription>
@@ -51,7 +51,7 @@ export function TeamWorkloadGrid({
                 <div className="font-display text-2xl font-semibold">{team.averageProgress}%</div>
               </div>
             </div>
-            <div className="text-sm text-muted-foreground">
+            <div className="rounded-[1.15rem] bg-white/70 px-4 py-3 text-sm text-muted-foreground">
               {team.actualHours}h actual / {team.estimatedHours}h planned
             </div>
             <Progress value={team.averageProgress} />

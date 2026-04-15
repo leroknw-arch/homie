@@ -33,15 +33,16 @@ export default async function MarketingPlanPage({ searchParams }: PageProps) {
           description="Agrupa campañas por compañía y producto para evaluar dónde conviene seguir invirtiendo."
           eyebrow="Marketing plan view"
           title="Budget, ROI y eficiencia del plan"
+          tone="light"
         />
         <div className="grid gap-4">
-          <Card>
+          <Card className="glass-panel">
             <CardContent className="p-6">
               <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Total budget</div>
               <div className="mt-3 font-display text-4xl font-semibold">{formatCurrency(metrics.totalBudget)}</div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="glass-panel">
             <CardContent className="p-6">
               <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Actual spend</div>
               <div className="mt-3 font-display text-4xl font-semibold">{formatCurrency(metrics.totalSpend)}</div>
@@ -59,7 +60,7 @@ export default async function MarketingPlanPage({ searchParams }: PageProps) {
       ) : null}
 
       {hasCampaigns ? <section className="grid gap-6 xl:grid-cols-2">
-        <Card>
+        <Card className="glass-panel">
           <CardHeader>
             <CardTitle>Budget distribution</CardTitle>
             <CardDescription>Presupuesto planeado vs gasto real por campaña.</CardDescription>
@@ -76,7 +77,7 @@ export default async function MarketingPlanPage({ searchParams }: PageProps) {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="glass-panel">
           <CardHeader>
             <CardTitle>ROI signal</CardTitle>
             <CardDescription>Campañas más y menos eficientes según retorno.</CardDescription>
@@ -94,14 +95,14 @@ export default async function MarketingPlanPage({ searchParams }: PageProps) {
       </section> : null}
 
       {hasCampaigns ? <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
-        <Card>
+        <Card className="glass-panel">
           <CardHeader>
             <CardTitle>Grouped by company</CardTitle>
             <CardDescription>Lectura financiera agregada para dirección de marketing.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {metrics.companyGroups.map((group) => (
-              <div key={group.company} className="grid gap-4 rounded-[1.5rem] border border-border/70 p-5 md:grid-cols-4">
+              <div key={group.company} className="grid gap-4 rounded-[1.55rem] border border-white/70 bg-white/68 p-5 md:grid-cols-4">
                 <div>
                   <div className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Company</div>
                   <div className="font-display text-lg font-semibold">{group.company}</div>
@@ -124,13 +125,13 @@ export default async function MarketingPlanPage({ searchParams }: PageProps) {
         </Card>
 
         <div className="space-y-6">
-          <Card>
+          <Card className="glass-panel">
             <CardHeader>
               <CardTitle>Top efficiency</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {metrics.efficientCampaigns.map((campaign) => (
-                <div key={campaign.name} className="rounded-[1.25rem] bg-emerald-50 p-4">
+                <div key={campaign.name} className="rounded-[1.35rem] bg-[linear-gradient(180deg,#eef9f1_0%,#f8fbf7_100%)] p-4">
                   <div className="font-medium text-emerald-900">{campaign.name}</div>
                   <div className="mt-1 text-sm text-emerald-700">{campaign.roi.toFixed(1)}x ROI</div>
                 </div>
@@ -138,13 +139,13 @@ export default async function MarketingPlanPage({ searchParams }: PageProps) {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="glass-panel">
             <CardHeader>
               <CardTitle>Underperforming campaigns</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {metrics.lowPerformanceCampaigns.map((campaign) => (
-                <div key={campaign.name} className="rounded-[1.25rem] bg-rose-50 p-4">
+                <div key={campaign.name} className="rounded-[1.35rem] bg-[linear-gradient(180deg,#fff1f1_0%,#fff8f0_100%)] p-4">
                   <div className="flex items-center justify-between gap-3">
                     <div className="font-medium text-rose-900">{campaign.name}</div>
                     <Badge variant={getStatusVariant(campaign.status)}>{campaignStatusLabels[campaign.status]}</Badge>
@@ -159,7 +160,7 @@ export default async function MarketingPlanPage({ searchParams }: PageProps) {
         </div>
       </section> : null}
 
-      {hasCampaigns ? <Card>
+      {hasCampaigns ? <Card className="glass-panel">
         <CardHeader>
           <CardTitle>Campaign finance table</CardTitle>
           <CardDescription>Budget, spend, ROI and grouping by company / product.</CardDescription>

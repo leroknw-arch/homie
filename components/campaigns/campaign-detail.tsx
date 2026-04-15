@@ -112,8 +112,8 @@ export function CampaignDetailView({
 
   return (
     <div className="space-y-6">
-      <Card className="overflow-hidden bg-surface-900 text-white">
-        <CardContent className="grid gap-8 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_28%),linear-gradient(135deg,#202a17_0%,#324124_100%)] p-7 lg:grid-cols-[1.15fr_0.85fr]">
+      <Card className="overflow-hidden border-0 bg-transparent text-white shadow-none">
+        <CardContent className="grid gap-8 rounded-[2rem] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_28%),radial-gradient(circle_at_80%_16%,rgba(233,193,255,0.12),transparent_18%),linear-gradient(135deg,#181818_0%,#2f3f21_100%)] p-7 shadow-panel lg:grid-cols-[1.15fr_0.85fr]">
           <div className="space-y-5">
             <div className="flex flex-wrap items-center gap-2">
               <Badge className="bg-white/12 text-white" variant={getStatusVariant(campaign.status)}>
@@ -175,7 +175,7 @@ export function CampaignDetailView({
       </Card>
 
       {bundle.risk.reasons.length ? (
-        <Card className="border-rose-200 bg-rose-50/70">
+        <Card className="border-0 bg-[linear-gradient(180deg,#fff1f1_0%,#fff8f0_100%)]">
           <CardContent className="flex flex-col gap-3 p-5 md:flex-row md:items-center md:justify-between">
             <div className="flex items-start gap-3">
               <div className="flex size-10 items-center justify-center rounded-2xl bg-rose-100 text-rose-700">
@@ -195,7 +195,7 @@ export function CampaignDetailView({
         </Card>
       ) : null}
 
-      <div className="flex flex-wrap gap-2 rounded-[1.5rem] border border-white/70 bg-white/85 p-2 shadow-soft backdrop-blur-sm">
+      <div className="glass-panel flex flex-wrap gap-2 rounded-[1.65rem] border border-white/70 p-2 shadow-soft backdrop-blur-md">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;

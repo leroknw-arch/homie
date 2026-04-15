@@ -41,7 +41,7 @@ export function AttentionCard({
   }
 
   return (
-    <Card className="overflow-hidden border-rose-200 bg-rose-50/70">
+    <Card className="overflow-hidden border-0 bg-[linear-gradient(135deg,#1a1a1a_0%,#2e1e1d_48%,#fdf4ee_48%,#fffaf7_100%)] shadow-panel">
       <CardContent className="grid gap-6 p-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
@@ -55,18 +55,18 @@ export function AttentionCard({
           </div>
 
           <div>
-            <h2 className="font-display text-3xl font-semibold text-rose-950">{item.insight.title}</h2>
-            <p className="mt-2 max-w-2xl text-sm text-rose-900/78">{item.insight.detail}</p>
+            <h2 className="font-display text-3xl font-semibold text-white lg:text-rose-950">{item.insight.title}</h2>
+            <p className="mt-2 max-w-2xl text-sm text-white/72 lg:text-rose-900/78">{item.insight.detail}</p>
           </div>
 
-          <div className="rounded-[1.25rem] bg-white/80 p-4 text-sm text-surface-800">
+          <div className="rounded-[1.25rem] bg-white/[0.88] p-4 text-sm text-surface-800">
             <div className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Recommended action</div>
             <div className="mt-2 font-medium">{item.insight.recommendation}</div>
           </div>
 
           {item.insight.campaignId ? (
-              <Link
-              className="inline-flex items-center gap-2 text-sm font-medium text-rose-900 transition hover:text-rose-700"
+            <Link
+              className="inline-flex items-center gap-2 text-sm font-medium text-white transition hover:text-white/78 lg:text-rose-900 lg:hover:text-rose-700"
               href={`/campaigns/${item.insight.campaignId}` as Route}
             >
               Open campaign
@@ -93,7 +93,7 @@ function MetricBlock({
   value: string;
 }) {
   return (
-    <div className="rounded-[1.2rem] bg-white/85 p-4">
+    <div className="rounded-[1.2rem] bg-white/[0.88] p-4 shadow-soft">
       <div className="text-xs uppercase tracking-[0.16em] text-muted-foreground">{label}</div>
       <div className="mt-2 font-display text-2xl font-semibold text-surface-900">{value}</div>
     </div>

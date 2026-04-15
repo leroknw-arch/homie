@@ -35,7 +35,7 @@ export function PerformanceComparison({
   }
 
   return (
-    <Card>
+    <Card className="glass-panel">
       <CardHeader>
         <CardTitle>Performance comparison</CardTitle>
         <CardDescription>Top campaign vs worst campaign side by side.</CardDescription>
@@ -76,7 +76,13 @@ function ComparisonPanel({
   tone: "positive" | "negative";
 }) {
   return (
-    <div className={tone === "positive" ? "rounded-[1.35rem] bg-emerald-50 p-5" : "rounded-[1.35rem] bg-rose-50 p-5"}>
+    <div
+      className={
+        tone === "positive"
+          ? "rounded-[1.45rem] bg-[linear-gradient(180deg,#eef9f1_0%,#f7faf5_100%)] p-5"
+          : "rounded-[1.45rem] bg-[linear-gradient(180deg,#fff2f2_0%,#fff8f0_100%)] p-5"
+      }
+    >
       <div className="flex items-center gap-2 text-sm font-medium">
         {icon}
         {label}

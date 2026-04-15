@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 54 26% 97%;
-    --foreground: 145 28% 12%;
+    --background: 35 22% 97%;
+    --foreground: 220 22% 13%;
     --card: 0 0% 100%;
-    --card-foreground: 145 28% 12%;
+    --card-foreground: 220 22% 13%;
     --popover: 0 0% 100%;
-    --popover-foreground: 145 28% 12%;
-    --primary: 82 28% 41%;
-    --primary-foreground: 55 20% 97%;
-    --secondary: 75 20% 92%;
-    --secondary-foreground: 145 28% 12%;
-    --muted: 70 18% 94%;
-    --muted-foreground: 140 10% 38%;
-    --accent: 167 27% 90%;
-    --accent-foreground: 167 55% 18%;
+    --popover-foreground: 220 22% 13%;
+    --primary: 84 27% 38%;
+    --primary-foreground: 48 27% 96%;
+    --secondary: 285 27% 95%;
+    --secondary-foreground: 220 22% 13%;
+    --muted: 30 18% 95%;
+    --muted-foreground: 225 9% 43%;
+    --accent: 19 88% 92%;
+    --accent-foreground: 14 52% 24%;
     --destructive: 0 73% 53%;
     --destructive-foreground: 0 0% 100%;
-    --border: 80 18% 86%;
-    --input: 80 18% 86%;
-    --ring: 82 28% 41%;
-    --radius: 1rem;
+    --border: 36 20% 88%;
+    --input: 36 20% 88%;
+    --ring: 84 27% 38%;
+    --radius: 1.1rem;
   }
 
   * {
@@ -37,12 +37,13 @@
   body {
     @apply bg-background text-foreground antialiased;
     background-image:
-      radial-gradient(circle at top left, rgba(124, 143, 84, 0.08), transparent 28%),
-      radial-gradient(circle at 80% 12%, rgba(15, 118, 110, 0.08), transparent 24%);
+      radial-gradient(circle at top left, rgba(133, 154, 86, 0.08), transparent 28%),
+      radial-gradient(circle at 85% 8%, rgba(181, 144, 230, 0.08), transparent 24%),
+      radial-gradient(circle at 82% 24%, rgba(244, 174, 123, 0.07), transparent 18%);
   }
 
   ::selection {
-    background: rgba(124, 143, 84, 0.2);
+    background: rgba(133, 154, 86, 0.22);
   }
 }
 
@@ -57,5 +58,9 @@
 
   .table-readable td {
     @apply py-4 align-top;
+  }
+
+  .glass-panel {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.82));
   }
 }

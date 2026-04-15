@@ -2,8 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export function PerformanceHero({ referenceDate }: { referenceDate: string }) {
   return (
-    <Card className="overflow-hidden bg-surface-950 text-white">
-      <CardContent className="grid gap-8 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_26%),linear-gradient(135deg,#171f11_0%,#2f3f21_100%)] p-7 lg:grid-cols-[1.2fr_0.8fr]">
+    <Card className="overflow-hidden border-0 bg-transparent shadow-none">
+      <CardContent className="grid gap-8 rounded-[2rem] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_24%),radial-gradient(circle_at_78%_20%,rgba(233,193,255,0.16),transparent_20%),linear-gradient(135deg,#151515_0%,#2a2b28_100%)] p-7 text-white shadow-panel lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-4">
           <div className="text-xs uppercase tracking-[0.22em] text-white/60">Marketing control center</div>
           <div className="space-y-3">
@@ -36,7 +36,7 @@ function HeroSignal({
   detail: string;
 }) {
   return (
-    <div className="rounded-[1.35rem] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
+    <div className="rounded-[1.45rem] border border-white/10 bg-white/[0.08] p-4 backdrop-blur-sm">
       <div className="text-xs uppercase tracking-[0.16em] text-white/58">{label}</div>
       <div className="mt-2 font-display text-2xl font-semibold">{value}</div>
       <div className="mt-1 text-sm text-white/65">{detail}</div>

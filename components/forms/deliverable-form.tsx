@@ -29,7 +29,7 @@ export function DeliverableForm() {
   }
 
   return (
-    <Card>
+    <Card className="glass-panel">
       <CardHeader>
         <CardTitle>Create deliverable</CardTitle>
         <CardDescription>Define ownership, timing and effort so the deliverable is easy to track.</CardDescription>
@@ -90,9 +90,12 @@ export function DeliverableForm() {
             </FormField>
           </div>
           {message ? <DemoFormMessage tone={message.tone}>{message.text}</DemoFormMessage> : null}
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="rounded-[1.35rem] border border-white/70 bg-white/70 p-4">
+            <div className="mb-4 text-xs uppercase tracking-[0.16em] text-muted-foreground">Deliverable draft</div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs text-muted-foreground">This demo create form validates required fields and keeps terminology aligned with the product model.</p>
             <Button type="submit">Validate deliverable</Button>
+            </div>
           </div>
         </form>
       </CardContent>

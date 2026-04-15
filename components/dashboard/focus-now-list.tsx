@@ -45,12 +45,12 @@ export function FocusNowList({
           <Link
             key={item.campaignId}
             href={`/campaigns/${item.campaignId}` as Route}
-            className="block rounded-[1.25rem] bg-secondary/55 p-4 transition hover:bg-secondary"
+            className="block rounded-[1.4rem] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(250,246,255,0.82))] p-4 transition hover:bg-white"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="inline-flex size-7 items-center justify-center rounded-full bg-white text-xs font-semibold text-surface-900">
+                  <div className="inline-flex size-7 items-center justify-center rounded-full bg-surface-900 text-xs font-semibold text-white">
                     {index + 1}
                   </div>
                   <div className="font-medium text-surface-900">{item.campaignName}</div>

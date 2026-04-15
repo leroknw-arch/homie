@@ -13,8 +13,8 @@ export function DemoFormMessage({
       role={tone === "error" ? "alert" : "status"}
       className={
         tone === "error"
-          ? "rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700"
-          : "rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700"
+          ? "rounded-[1.2rem] border border-rose-200 bg-[linear-gradient(180deg,#fff1f1_0%,#fff8f0_100%)] px-4 py-3 text-sm text-rose-700"
+          : "rounded-[1.2rem] border border-emerald-200 bg-[linear-gradient(180deg,#eef9f1_0%,#f8fbf7_100%)] px-4 py-3 text-sm text-emerald-700"
       }
     >
       {children}

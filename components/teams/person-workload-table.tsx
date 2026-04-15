@@ -29,7 +29,7 @@ export function PersonWorkloadTable({
   }
 
   return (
-    <Card>
+    <Card className="glass-panel">
       <CardHeader>
         <CardTitle>Workload by person</CardTitle>
         <CardDescription>Seguimiento de carga, bloqueo y avance a nivel responsable.</CardDescription>

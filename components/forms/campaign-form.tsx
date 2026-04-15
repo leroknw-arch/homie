@@ -31,7 +31,7 @@ export function CampaignForm() {
   }
 
   return (
-    <Card>
+    <Card className="glass-panel">
       <CardHeader>
         <CardTitle>Create campaign</CardTitle>
         <CardDescription>Define business context first, then execution boundaries and budget.</CardDescription>
@@ -93,11 +93,14 @@ export function CampaignForm() {
             </FormField>
           </div>
           {message ? <DemoFormMessage tone={message.tone}>{message.text}</DemoFormMessage> : null}
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="rounded-[1.35rem] border border-white/70 bg-white/70 p-4">
+            <div className="mb-4 text-xs uppercase tracking-[0.16em] text-muted-foreground">Campaign draft</div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs text-muted-foreground">
               Demo create form only. Validation is active; persistence is still pending.
             </p>
             <Button type="submit">Validate campaign</Button>
+            </div>
           </div>
         </form>
       </CardContent>

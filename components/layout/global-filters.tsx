@@ -85,7 +85,7 @@ export function GlobalFilters() {
   }
 
   return (
-    <div className="mb-6 rounded-[1.5rem] border border-white/70 bg-white/85 p-4 shadow-soft backdrop-blur-sm">
+    <div className="glass-panel mb-6 rounded-[1.65rem] border border-white/70 p-4 shadow-soft backdrop-blur-md">
       <div className="mb-3 flex items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-sm font-medium text-surface-800">
           <SlidersHorizontal className="size-4" />
@@ -125,6 +125,7 @@ export function GlobalFilters() {
         <label className="space-y-2 text-sm">
           <span className="font-medium text-muted-foreground">Date</span>
           <Input
+            className="bg-white/90"
             value={searchParams.get("date") ?? ""}
             onChange={(event) => updateParam("date", event.target.value)}
             type="date"

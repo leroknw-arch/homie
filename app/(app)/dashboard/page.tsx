@@ -51,17 +51,19 @@ export default async function DashboardPage({ searchParams }: PageProps) {
 
           <AttentionCard item={performance.underperforming} />
 
-          <section className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
+          <section className="grid gap-6 xl:grid-cols-[0.92fr_1.08fr]">
             <FocusNowList items={performance.focusNow} />
 
-            <PerformanceComparison
-              topCampaign={performance.topCampaigns[0]}
-              worstCampaign={performance.worstCampaigns[0]}
-            />
+            <div className="grid gap-6">
+              <PerformanceComparison
+                topCampaign={performance.topCampaigns[0]}
+                worstCampaign={performance.worstCampaigns[0]}
+              />
+            </div>
           </section>
 
           <section className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
-            <Card>
+            <Card className="glass-panel">
               <CardHeader>
                 <CardTitle>Performance trend</CardTitle>
                 <CardDescription>Spend vs revenue over the last visible days.</CardDescription>
@@ -77,7 +79,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="glass-panel">
               <CardHeader>
                 <CardTitle>ROAS trend</CardTitle>
                 <CardDescription>See efficiency direction before moving budget.</CardDescription>

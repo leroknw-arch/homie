@@ -52,7 +52,7 @@ export function PerformanceKpiStrip({
   ] as const;
 
   return (
-    <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+    <section className="-mt-1 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       {cards.map((card) => (
         <MetricCard key={card.label} {...card} highlight={card.label === "ROAS"} />
       ))}
@@ -84,10 +84,13 @@ function MetricCard({
     <Card
       className={cn(
         "overflow-hidden border-0 shadow-soft",
-        highlight && "ring-1 ring-emerald-300/50",
-        tone === "good" && "bg-surface-950 text-white",
-        tone === "warning" && "bg-amber-50",
-        tone === "bad" && "bg-rose-50"
+        highlight && "translate-y-[-2px] ring-1 ring-emerald-300/45",
+        tone === "good" &&
+          (highlight
+            ? "bg-[linear-gradient(145deg,#141414_0%,#262e21_60%,#36402a_100%)] text-white"
+            : "bg-[linear-gradient(145deg,#1a1b19_0%,#242822_100%)] text-white"),
+        tone === "warning" && "bg-[linear-gradient(180deg,#fff5eb_0%,#fff0fa_100%)]",
+        tone === "bad" && "bg-[linear-gradient(180deg,#fff1f1_0%,#fff6ef_100%)]"
       )}
     >
       <CardContent className="space-y-5 p-6">
@@ -98,7 +101,7 @@ function MetricCard({
           <MetricStatus tone={tone} />
         </div>
 
-        <div className={cn("font-display text-4xl font-semibold tracking-tight", tone !== "good" && "text-surface-900")}>
+        <div className={cn("font-display text-[2.7rem] font-semibold tracking-[-0.04em]", tone !== "good" && "text-surface-900")}>
           {value}
         </div>
 

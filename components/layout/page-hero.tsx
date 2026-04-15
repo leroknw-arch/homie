@@ -19,17 +19,17 @@ export function PageHero({
   return (
     <Card
       className={cn(
-        "overflow-hidden",
+        "overflow-hidden border-0",
         tone === "dark"
-          ? "bg-surface-900 text-white"
-          : "border border-white/70 bg-white/90 text-foreground"
+          ? "bg-transparent text-white shadow-none"
+          : "glass-panel text-foreground"
       )}
     >
       <CardContent
         className={cn(
-          "grid gap-6 p-6 lg:grid-cols-[1.15fr_0.85fr] lg:p-7",
+          "grid gap-6 rounded-[1.9rem] p-6 lg:grid-cols-[1.15fr_0.85fr] lg:p-7",
           tone === "dark" &&
-            "bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_28%),linear-gradient(135deg,#202a17_0%,#324124_100%)]"
+            "bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.15),transparent_28%),radial-gradient(circle_at_78%_18%,rgba(233,193,255,0.12),transparent_18%),linear-gradient(135deg,#171717_0%,#2f3f21_100%)] shadow-panel"
         )}
       >
         <div className="space-y-3">
@@ -41,7 +41,7 @@ export function PageHero({
           >
             {eyebrow}
           </div>
-          <h2 className="max-w-3xl text-balance font-display text-4xl font-semibold">{title}</h2>
+          <h2 className="max-w-3xl text-balance font-display text-4xl font-semibold tracking-[-0.03em]">{title}</h2>
           <p
             className={cn(
               "max-w-3xl text-sm leading-6 sm:text-base",

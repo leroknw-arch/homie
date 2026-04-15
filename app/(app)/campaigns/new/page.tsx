@@ -35,6 +35,7 @@ export default async function CampaignFormsPage() {
         description="Formularios demo listos para captura inicial consistente y futura persistencia real."
         eyebrow="Formularios"
         title="Captura demo de campañas, entregables y tasks"
+        tone="light"
       />
 
       <div className="grid gap-6">

@@ -1,14 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Plus, Sparkles } from "lucide-react";
+import { Plus } from "lucide-react";
 
 import { canCreateCampaign, roleLabels } from "@/lib/auth/permissions";
 import { LogoutButton } from "@/components/auth/logout-button";
 import { GlobalFilters } from "@/components/layout/global-filters";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
 import { Button } from "@/components/ui/button";
+import logoHomie from "@/design-system/logo-homie.png";
 
 const pageMeta = {
   "/dashboard": {
@@ -69,23 +71,22 @@ export function AppShell({
 
   return (
     <div className="min-h-screen lg:grid lg:grid-cols-[280px_1fr]">
-      <aside className="border-b border-white/50 bg-surface-50/90 px-5 py-6 backdrop-blur-sm lg:border-b-0 lg:border-r">
+      <aside className="border-b border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,255,255,0.68))] px-5 py-6 backdrop-blur-md lg:border-b-0 lg:border-r">
         <div className="mb-8 flex items-center justify-between">
           <Link href="/dashboard" className="flex items-center gap-3">
-            <div className="flex size-11 items-center justify-center rounded-2xl bg-surface-800 text-white">
-              <Sparkles className="size-5" />
-            </div>
-            <div>
-              <div className="font-display text-lg font-semibold">HOMIE</div>
-              <div className="text-xs text-muted-foreground">Marketing Execution</div>
-            </div>
+            <Image
+              alt="HOMIE logo"
+              className="h-auto w-[144px]"
+              priority
+              src={logoHomie}
+            />
           </Link>
         </div>
 
         <SidebarNav pathname={pathname} role={user.role} />
 
-        <div className="mt-8 rounded-[1.5rem] bg-surface-800 p-5 text-white shadow-soft">
-          <div className="text-xs uppercase tracking-[0.18em] text-white/60">Usuario actual</div>
+        <div className="mt-8 rounded-[1.6rem] bg-[linear-gradient(145deg,#131313_0%,#232323_100%)] p-5 text-white shadow-panel">
+          <div className="text-xs uppercase tracking-[0.18em] text-white/58">Usuario actual</div>
           <div className="mt-3">
             <div className="font-medium text-white">{user.name}</div>
             <div className="text-sm text-white/70">
@@ -102,7 +103,7 @@ export function AppShell({
       </aside>
 
       <main className="px-4 py-4 sm:px-6 lg:px-8 lg:py-6">
-        <header className="mb-6 flex flex-col gap-4 rounded-[1.75rem] border border-white/70 bg-white/80 px-5 py-4 shadow-soft backdrop-blur-sm md:flex-row md:items-center md:justify-between">
+        <header className="glass-panel mb-6 flex flex-col gap-4 rounded-[1.8rem] border border-white/70 px-5 py-4 shadow-soft backdrop-blur-md md:flex-row md:items-center md:justify-between">
           <div>
             <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
               {meta.eyebrow}

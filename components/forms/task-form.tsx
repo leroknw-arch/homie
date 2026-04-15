@@ -30,7 +30,7 @@ export function TaskForm() {
   }
 
   return (
-    <Card>
+    <Card className="glass-panel">
       <CardHeader>
         <CardTitle>Create task</CardTitle>
         <CardDescription>Keep task capture simple: responsible person, dates, effort and dependency.</CardDescription>
@@ -85,9 +85,12 @@ export function TaskForm() {
             </FormField>
           </div>
           {message ? <DemoFormMessage tone={message.tone}>{message.text}</DemoFormMessage> : null}
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="rounded-[1.35rem] border border-white/70 bg-white/70 p-4">
+            <div className="mb-4 text-xs uppercase tracking-[0.16em] text-muted-foreground">Task draft</div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs text-muted-foreground">This demo create form keeps dependencies, hours and dates aligned with the execution model.</p>
             <Button type="submit">Validate task</Button>
+            </div>
           </div>
         </form>
       </CardContent>

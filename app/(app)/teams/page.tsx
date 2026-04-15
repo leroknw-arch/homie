@@ -32,6 +32,7 @@ export default async function TeamsPage({ searchParams }: PageProps) {
         description="Ideal para balancear trabajo operativo entre diseño, PR, community, growth y ventas."
         eyebrow="Team capacity view"
         title="Carga, bloqueo y avance por equipo"
+        tone="light"
       />
 
       {!hasWorkload ? (
@@ -43,7 +44,7 @@ export default async function TeamsPage({ searchParams }: PageProps) {
       ) : null}
 
       {hasWorkload ? <section className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
-        <Card>
+        <Card className="glass-panel">
           <CardHeader>
             <CardTitle>Workload trend</CardTitle>
             <CardDescription>Horas planeadas vs horas reales por equipo.</CardDescription>
@@ -53,15 +54,24 @@ export default async function TeamsPage({ searchParams }: PageProps) {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="glass-panel">
           <CardHeader>
             <CardTitle>Executive notes</CardTitle>
             <CardDescription>Lectura rápida de capacidad del equipo.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <p>{workload.summary.totalOpenTasks} open tasks permanecen activas bajo los filtros globales actuales.</p>
-            <p>{workload.summary.totalActualHours} horas reales ya fueron invertidas por el equipo visible en pantalla.</p>
-            <p>Esta vista ya permite leer capacidad tanto por equipo como por persona responsable.</p>
+            <div className="rounded-[1.3rem] bg-white/70 p-4">
+              <div className="font-medium text-surface-900">{workload.summary.totalOpenTasks} open tasks</div>
+              <div className="mt-1">Permanecen activas bajo los filtros globales actuales.</div>
+            </div>
+            <div className="rounded-[1.3rem] bg-white/70 p-4">
+              <div className="font-medium text-surface-900">{workload.summary.totalActualHours} hours logged</div>
+              <div className="mt-1">Ya fueron invertidas por el equipo visible en pantalla.</div>
+            </div>
+            <div className="rounded-[1.3rem] bg-white/70 p-4">
+              <div className="font-medium text-surface-900">Capacity at both levels</div>
+              <div className="mt-1">La vista permite leer carga por equipo y por persona responsable.</div>
+            </div>
           </CardContent>
         </Card>
       </section> : null}
