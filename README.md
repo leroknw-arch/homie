@@ -1,6 +1,6 @@
 # HOMIE
 
-HOMIE is a premium Marketing Execution Platform for Heads of Marketing. It connects company and product structure with campaigns, units of work, deliverables, tasks, budget, ROI, workload, gantt visibility and campaign risk logic.
+HOMIE is a premium Marketing Execution Platform for Heads of Marketing. It connects company and product structure with campaigns, units of work, deliverables, tasks, budget, ROI, workload, gantt visibility and campaign risk logic. It is designed as a control center that helps teams see what’s working, detect underperforming campaigns quickly, and take action faster.
 
 ## Stack
 
